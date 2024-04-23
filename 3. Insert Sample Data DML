@@ -1,0 +1,9 @@
+insert into user_profile values (1, 'tomlee@gmail.com', '!6dhjh9gf7', 'Taiwan', '1980/01/28', 'Tom', 'Lee');
+
+insert into user_profile values (2, 'jasonchang@gmail.com', '!76d98ghd5', 'Taiwan', '1984/08/01', 'Jason', 'Chang');
+
+insert into user_profile values (3, 'richardwang@gmail.com', '!hfd7kk8d6', 'Taiwan', '1984/05/23', 'Richard', 'Wang');
+
+insert into user_profile values (4, 'ivychen@gmail.com', '!73h6kg8s6', 'Taiwan', '1992/05/4', 'Ivy', 'Chen');
+
+insert into user_profile values (5, 'maryko@gmail.com', '!27f6h50d7', 'Taiwan', '1999/07/03', 'Mary', 'Ko');
