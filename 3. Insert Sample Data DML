@@ -1,3 +1,7 @@
+/*
+**  Insert user profile
+*/
+
 insert into user_profile values (1, 'tomlee@gmail.com', '!6dhjh9gf7', 'Taiwan', '1980/01/28', 'Tom', 'Lee');
 
 insert into user_profile values (2, 'jasonchang@gmail.com', '!76d98ghd5', 'Taiwan', '1984/08/01', 'Jason', 'Chang');
