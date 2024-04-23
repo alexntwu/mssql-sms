@@ -9,56 +9,41 @@
 );
 
 
-CREATE TABLE Post (
-    PostID INT PRIMARY KEY,
-    UserID INT,
-    Content TEXT,
-    MediaType VARCHAR(20),
-    MediaURL VARCHAR(255),
-    Timestamp TIMESTAMP,
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+CREATE TABLE user_post (
+    id INT PRIMARY KEY,
+    profile_id INT,
+    written_text TEXT,
+    medial_location VARCHAR(255),
+    created_datetime DATETIME,
+    FOREIGN KEY (profile_id) REFERENCES user_profile(id)
 );
 
 
-CREATE TABLE Comment (
-    CommentID INT PRIMARY KEY,
-    PostID INT,
-    UserID INT,
-    Content TEXT,
-    Timestamp TIMESTAMP,
-    FOREIGN KEY (PostID) REFERENCES Post(PostID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+CREATE TABLE post_comment (
+    id INT PRIMARY KEY,
+    post_id INT,
+    profile_id INT,
+    comment_text TEXT,
+    created_datetime DATETIME,
+    FOREIGN KEY (post_id) REFERENCES user_post(id),
+    FOREIGN KEY (profile_id) REFERENCES user_profile(id)
 );
 
 
-CREATE TABLE Like (
-    LikeID INT PRIMARY KEY,
-    PostID INT,
-    CommentID INT,
-    UserID INT,
-    Timestamp TIMESTAMP,
-    FOREIGN KEY (PostID) REFERENCES Post(PostID),
-    FOREIGN KEY (CommentID) REFERENCES Comment(CommentID),
-    FOREIGN KEY (UserID) REFERENCES User(UserID)
+CREATE TABLE post_like (
+    id INT PRIMARY KEY,
+    post_id INT,
+    profile_id INT,
+    created_datetime DATETIME,
+    FOREIGN KEY (post_id) REFERENCES user_post(id),
+    FOREIGN KEY (profile_id) REFERENCES user_profile(id)
 );
 
 
-CREATE TABLE Friendship (
-    FriendshipID INT PRIMARY KEY,
-    UserID1 INT,
-    UserID2 INT,
-    Timestamp TIMESTAMP,
-    FOREIGN KEY (UserID1) REFERENCES User(UserID),
-    FOREIGN KEY (UserID2) REFERENCES User(UserID)
+CREATE TABLE friendship (
+    profile_request INT,
+    profile_accept INT,
+    FOREIGN KEY (profile_request) REFERENCES user_profile(id),
+    FOREIGN KEY (profile_accept) REFERENCES user_profile(id)
 );
 
-
-CREATE TABLE Message (
-    MessageID INT PRIMARY KEY,
-    SenderID INT,
-    ReceiverID INT,
-    Content TEXT,
-    Timestamp TIMESTAMP,
-    FOREIGN KEY (SenderID) REFERENCES User(UserID),
-    FOREIGN KEY (ReceiverID) REFERENCES User(UserID)
-);
