@@ -90,3 +90,5 @@ User – Message Relationship
 Each message involves two users (SenderID and ReceiverID in the Message table reference UserID in the User table).
 This is a one-to-one relationship, as each message is sent between two users.
 
+
+REF: https://www.geeksforgeeks.org/how-to-design-database-for-social-media-platform/
