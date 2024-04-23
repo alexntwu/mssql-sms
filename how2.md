@@ -58,7 +58,8 @@ Entities serve as the building blocks of our database, representing the fundamen
 * FriendshipID (Primary Key): Unique identifier for each friendship.
 * UserID1, UserID2 (Foreign Keys): References to the users who are friends.
 * Timestamp: Date and time when the friendship was established.
-* Message: Represents private messages sent between users.
+  
+## Message: Represents private messages sent between users.
 * MessageID (Primary Key): Unique identifier for each message.
 * SenderID, ReceiverID (Foreign Keys): References to the users involved in the conversation.
 * Content: Text content of the message.
