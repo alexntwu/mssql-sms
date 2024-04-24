@@ -1,12 +1,32 @@
-
-/*
-** Empty out the user_profile table
-*/
-TRUNCATE TABLE user_profile;
-
-
 /*
 ** Alter password data type to VARBINARY(32)
 */
-ALTER TABLE user_profile ALTER COLUMN password VARBINARY(32);  
+ALTER TABLE user_profile ADD hashpassword VARBINARY(32);
 
+UPDATE user_profile SET hashpassword = HASHBYTES ('SHA2_256', password)
+
+ALTER TABLE user_profile DROP COLUMN password; 
+
+
+/*
+** UDF PasswordCheck Function
+*/
+
+CREATE FUNCTION fn_PasswordCheck
+(@user_email nvarchar(100), @password_cleartext nvarchar(32))
+RETURNS TINYINT
+BEGIN
+	DECLARE @hashvalue VARBINARY(32)
+	DECLARE @retcode TINYINT
+
+	SELECT @hashvalue = hashpassword FROM user_profile WHERE email_address = @user_email
+	IF @hashvalue IS NULL
+		SET @retcode = -1
+	ELSE
+		IF @hashvalue = HASHBYTES ('SHA2_256', @password_cleartext)
+			SET @retcode = 1
+		ELSE
+			SET @retcode = 0
+
+	RETURN @retcode
+END
