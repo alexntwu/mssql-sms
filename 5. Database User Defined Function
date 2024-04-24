@@ -1,0 +1,12 @@
+
+/*
+** Empty out the user_profile table
+*/
+TRUNCATE TABLE user_profile;
+
+
+/*
+** Alter password data type to VARBINARY(32)
+*/
+ALTER TABLE user_profile ALTER COLUMN password VARBINARY(32);  
+
