@@ -11,13 +11,12 @@ ALTER TABLE user_profile DROP COLUMN password;
 /*
 ** UDF PasswordCheck Function
 */
-
 CREATE FUNCTION fn_PasswordCheck
-(@user_email nvarchar(100), @password_cleartext nvarchar(32))
-RETURNS TINYINT
+(@user_email varchar(100), @password_cleartext varchar(32))
+RETURNS SMALLINT
 BEGIN
 	DECLARE @hashvalue VARBINARY(32)
-	DECLARE @retcode TINYINT
+	DECLARE @retcode SMALLINT
 
 	SELECT @hashvalue = hashpassword FROM user_profile WHERE email_address = @user_email
 	IF @hashvalue IS NULL
@@ -30,3 +29,13 @@ BEGIN
 
 	RETURN @retcode
 END
+
+/*
+** Authenticate your password
+*/
+select fn_PasswordCheck('omlee@gmail.com', 'password');
+
+select fn_PasswordCheck('tomlee@gmail.com', 'xxpassword');
+
+select fn_PasswordCheck('tomlee@gmail.com', 'password');
+
