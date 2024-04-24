@@ -1,12 +1,13 @@
 /*
 ** Alter password data type to VARBINARY(32)
 */
+```
 ALTER TABLE user_profile ADD hashpassword VARBINARY(32);
 
 UPDATE user_profile SET hashpassword = HASHBYTES ('SHA2_256', password)
 
 ALTER TABLE user_profile DROP COLUMN password; 
-
+```
 
 /*
 ** UDF PasswordCheck Function
