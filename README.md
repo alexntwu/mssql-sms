@@ -7,6 +7,6 @@
 4. 查詢 SMS 資料 <a href="https://github.com/alexntwu/mssql-sms/blob/main/4.%20Sample%20Query.md"> Go </a>
 5. 建立一個 User Defined Function 用以檢查登入者的帳號密碼 <a href="https://github.com/alexntwu/mssql-sms/blob/main/5.%20Database%20User%20Defined.md%20Function.md"> Go </a>
 
-6. 建立一個 Table-Valued UDF 用以取得你所有的朋友 <a href="https://github.com/alexntwu/mssql-sms/blob/main/5.%20Database%20User%20Defined.md%20Function.md"> Go </a>
+6. 建立一個 Table-Valued UDF 用以取得你所有的朋友 <a href="https://github.com/alexntwu/mssql-sms/blob/main/6.%20Rewrite%20a%20sample%20by%20UDF.md"> Go </a>
 
 7. 建立一個 Stored Procedure 自動發文祝賀你朋友生日快樂 <a href="https://github.com/alexntwu/mssql-sms/blob/main/5.%20Database%20User%20Defined.md%20Function.md"> Go </a>
