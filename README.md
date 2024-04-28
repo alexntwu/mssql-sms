@@ -9,4 +9,4 @@
 
 6. 建立一個 Table-Valued UDF 用以取得你所有的朋友 <a href="https://github.com/alexntwu/mssql-sms/blob/main/6.%20Rewrite%20a%20sample%20by%20UDF.md"> Go </a>
 
-7. 建立一個 Stored Procedure 自動發文祝賀你朋友生日快樂 <a href="https://github.com/alexntwu/mssql-sms/blob/main/5.%20Database%20User%20Defined.md%20Function.md"> Go </a>
+7. 建立一個 Stored Procedure 自動發文祝賀你朋友生日快樂 <a href="https://github.com/alexntwu/mssql-sms/blob/main/7.%20Post%20a%20birthday%20wish%20to%20your%20friend%20by%20SP.md"> Go </a>
